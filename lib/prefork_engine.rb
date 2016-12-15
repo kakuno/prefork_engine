@@ -73,7 +73,7 @@ class PreforkEngine
           end
           # parent
           if @options["after_fork"]
-             @options["after_fork"].call(self)
+             @options["after_fork"].call(self, pid)
           end
           @worker_pids[pid] = @generation
           self._update_spawn_delay(@options["spawn_interval"])
